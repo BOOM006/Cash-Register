@@ -1,0 +1,146 @@
+:root {
+  /*COLORS*/
+  --HEADER-BGCOLOR: #333;
+  --HEADER-COLOR: whitesmoke;
+  --GRADIENT-COLOR: rgb(246, 217, 217);
+  --BGCOLOR: #e59885b6;
+  --TABLE-BGCOLOR: rgba(255, 255, 255, 0.711);
+  --FOOTER-BGCOLOR: rgb(194, 186, 186);
+
+  /*FONTS*/
+  --FF: "Times New Roman";
+  --FS-INPUT: clamp(0.9rem, 1.6vw, 5rem);
+  --FS-TEXT: clamp(1rem, 1.8vw, 5rem); /*Texty - a, p*/
+  --FS-H1: clamp(2rem, 2.5vw, 6rem); /*Nadpis h1*/
+  --FS-H2: clamp(1.6rem, 2.5vw, 6rem); /*Nadpis h2*/
+  --FS-H3: clamp(1.5rem, 2.2vw, 5.8rem); /*Nadpis h3*/
+  --FS-H4: clamp(1.1rem, 2vw, 5.1rem); /*Nadpis h3*/
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: var(--FOOTER-BGCOLOR);
+}
+
+h1 {
+  font-size: var(--FS-H1);
+  margin: 0;
+  text-align: center;
+  padding: 1rem;
+}
+
+p,
+label {
+  font-size: var(--FS-TEXT);
+}
+
+input {
+  font-size: var(--FS-INPUT);
+  margin-bottom: 1rem;
+  border-radius: 3rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+button {
+  font-size: var(--FS-INPUT);
+  border-radius: 2rem;
+  padding: 0.7rem;
+  background-color: rgba(0, 128, 0, 0.608);
+  width: 80%;
+  margin: 0 auto;
+}
+
+main {
+  width: 50%;
+  height: 550px;
+  margin: 0 auto;
+  margin-top: 5rem; /* môžeš doladiť podľa potreby */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--BGCOLOR);
+  border-radius: 3rem;
+  border: 3px solid #e86b4b;
+  overflow: hidden; /* dôležité na zarovnanie obsahu s border-radius */
+}
+
+main h1 {
+  font-size: var(--FS-H1);
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+
+#changeOutput {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 0;
+  font-size: var(--FS-TEXT);
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 350px;
+  height: 50px;
+  text-align: center;
+}
+
+#bottom {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  width: 350px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  font-size: var(--FS-H3);
+  background-color: var(--FOOTER-BGCOLOR);
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    height: 350px;
+    margin-top: 1rem;
+  }
+
+.container{
+    width: 80%;
+}
+
+  #top,
+  #bottom {
+    width: 100%;
+  }
+}
