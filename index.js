@@ -24,33 +24,42 @@ document.getElementById("submit").onclick = function () {
   if (lastDigitNum >= 0 && lastDigitNum <= 2) {
     result = (cents - lastDigitNum) / 100;
     document.getElementById("output").textContent =
-      "Zaokrúhlená cena: " + result + " EUR";
+      "Rounded price: " + result + " EUR";
     background = document.getElementById("output");
     console.log("Zaokrúhlená cena: " + result);
 
     background.style.background = "rgb(245, 115, 115)";
     background.style.borderRadius = "3rem";
-    background.style.padding = "0.7rem";
+    background.style.padding = "1rem";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
   } else if (lastDigitNum >= 3 && lastDigitNum <= 7) {
     result = (cents - lastDigitNum + 5) / 100;
     document.getElementById("output").textContent =
-      "Zaokrúhlená cena: " + result + " EUR";
+      "Rounded price: " + result + " EUR";
     console.log("Zaokrúhlená cena: " + result);
 
     background = document.getElementById("output");
     background.style.background = "rgb(245, 115, 115)";
     background.style.borderRadius = "3rem";
-    background.style.padding = "0.7rem";
+    background.style.padding = "1rem";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
   } else {
     result = (cents - lastDigitNum + 10) / 100;
     document.getElementById("output").textContent =
-      "Zaokrúhlená cena: " + result + " EUR";
+      "Rounded price: " + result + " EUR";
     console.log("Zaokrúhlená cena: " + result);
 
     background = document.getElementById("output");
     background.style.background = "rgb(245, 115, 115)";
     background.style.borderRadius = "3rem";
-    background.style.padding = "0.7rem";
+    background.style.padding = "1rem";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
   }
 };
 
@@ -70,30 +79,58 @@ document.getElementById("submitPaid").onclick = function () {
   console.log("result " + result);
 
   if (change < 0) {
-    document.getElementById("changeOutput").textContent = "Nedostatočná suma!";
+    document.getElementById("changeOutput").textContent = "Insufficient funds!";
 
     let backgroundChange = document.getElementById("changeOutput");
     backgroundChange.style.background = "rgba(232, 42, 42, 0.82)";
     backgroundChange.style.borderRadius = "3rem";
-    backgroundChange.style.padding = "0.7rem";
+    backgroundChange.style.padding = "2rem";
+    backgroundChange.style.fontWeight = "bold";
     backgroundChange.style.height = "auto";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
+    resetButton.style.marginTop = "5rem";
+
+    let resetBtn = document.getElementById("resetBtn");
+    resetBtn.style.padding = "3rem";
   } else if (result === paidNum) {
-    document.getElementById("changeOutput").textContent = "Žiaden výdavok";
+    document.getElementById("changeOutput").textContent = "No change!";
 
     let backgroundChange = document.getElementById("changeOutput");
     backgroundChange.style.background = "rgba(69, 181, 54, 0.82)";
     backgroundChange.style.borderRadius = "3rem";
-    backgroundChange.style.padding = "0.7rem";
+    backgroundChange.style.padding = "2rem";
+    backgroundChange.style.fontWeight = "bold";
     backgroundChange.style.height = "auto";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
+    resetButton.style.marginTop = "5rem";
+
+    let resetBtn = document.getElementById("resetBtn");
+    resetBtn.style.padding = "3rem";
   } else {
     change = paidNum - result;
     document.getElementById("changeOutput").textContent =
-      "Výdavok: " + change + " EUR";
+      "Amount due: " + change + " EUR";
 
     let backgroundChange = document.getElementById("changeOutput");
     backgroundChange.style.background = "rgba(69, 181, 54, 0.82)";
     backgroundChange.style.borderRadius = "3rem";
-    backgroundChange.style.padding = "0.7rem";
+    backgroundChange.style.padding = "2rem";
+    backgroundChange.style.fontWeight = "bold";
     backgroundChange.style.height = "auto";
+
+    let resetButton = document.getElementById("reset");
+    resetButton.style.display = "flex";
+    resetButton.style.marginTop = "5rem";
+
+    let resetBtn = document.getElementById("resetBtn");
+    resetBtn.style.padding = "3rem";
   }
+};
+
+document.getElementById("reset").onclick = function () {
+  location.reload();
 };

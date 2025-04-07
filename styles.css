@@ -38,10 +38,10 @@ label {
 }
 
 input {
-  font-size: var(--FS-INPUT);
-  margin-bottom: 1rem;
+  font-size: var(--FS-TEXT);
+  margin: 1rem 0;
   border-radius: 3rem;
-  padding: 0.5rem;
+  padding: 1.3rem;
   text-align: center;
 }
 
@@ -52,13 +52,13 @@ button {
   background-color: rgba(0, 128, 0, 0.608);
   width: 80%;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 main {
   width: 50%;
-  height: 550px;
-  margin: 0 auto;
-  margin-top: 5rem; /* môžeš doladiť podľa potreby */
+  height: 650px;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   background-color: var(--BGCOLOR);
@@ -112,6 +112,11 @@ main h1 {
   text-align: center;
 }
 
+#top button {
+  padding: 1.5rem;
+  width: 90%;
+}
+
 #bottom {
   display: none;
   text-align: center;
@@ -119,6 +124,27 @@ main h1 {
   width: 350px;
   margin: 0 auto;
   padding-bottom: 3rem;
+}
+
+#bottom button {
+  padding: 1.5rem;
+  width: 90%;
+}
+
+#reset {
+  display: none;
+}
+
+#resetBtn {
+  background-color: orangered;
+  width: 60%;
+  padding: 1.5rem;
+  transition: padding 0.3s ease;
+  border-radius: 1.5rem;
+}
+
+#resetBtn:hover {
+  padding: 2rem;
 }
 
 .footer {
@@ -135,9 +161,9 @@ main h1 {
     margin-top: 1rem;
   }
 
-.container{
+  .container {
     width: 80%;
-}
+  }
 
   #top,
   #bottom {
